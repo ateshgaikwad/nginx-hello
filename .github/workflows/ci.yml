@@ -23,8 +23,8 @@ jobs:
       - name: Build backend image
         run: docker build -t hello-backend ./backend
 
-      - name: Run docker-compose
-        run: docker-compose up -d --build
+      - name: Run docker compose
+        run: docker compose up -d --build
 
       - name: Wait for services
         run: sleep 10
