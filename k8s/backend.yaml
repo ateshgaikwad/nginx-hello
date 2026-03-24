@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: ghcr.io/YOUR_GITHUB_USERNAME/YOUR_REPO/backend:latest
+          image: ghcr.io/ateshgaikwad/nginx-hello/backend:latest
           ports:
             - containerPort: 5000
           env:
