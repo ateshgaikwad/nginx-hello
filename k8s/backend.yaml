@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: ghcr.io/YOUR_GITHUB_USERNAME/YOUR_REPO/backend:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DATABASE_URL
+              value: postgresql://myuser:mypassword@postgres:5432/mydb
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+spec:
+  selector:
+    app: backend
+  ports:
+    - port: 5000
