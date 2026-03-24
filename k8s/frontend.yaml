@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: ghcr.io/YOUR_GITHUB_USERNAME/YOUR_REPO/frontend:latest
+          image: ghcr.io/ateshgaikwad/nginx-hello/frontend:latest
           ports:
             - containerPort: 80
 ---
